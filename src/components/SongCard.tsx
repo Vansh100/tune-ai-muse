@@ -14,7 +14,7 @@ export const SongCard = ({ title, artist, image, duration, className }: SongCard
   return (
     <div
       className={cn(
-        "group relative bg-card rounded-xl p-4 transition-all duration-300 hover:bg-secondary cursor-pointer border border-transparent hover:border-primary/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]",
+        "group relative bg-card rounded-xl p-4 transition-all duration-300 hover:bg-secondary cursor-pointer border border-transparent hover:border-primary/20",
         className
       )}
     >
@@ -27,7 +27,7 @@ export const SongCard = ({ title, artist, image, duration, className }: SongCard
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
           <Button
             size="icon"
-            className="w-12 h-12 rounded-full bg-primary hover:bg-primary/90 shadow-[0_0_30px_rgba(168,85,247,0.5)] transform scale-90 group-hover:scale-100 transition-transform duration-300"
+            className="w-12 h-12 rounded-full bg-primary hover:bg-primary/90 shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300"
           >
             <Play className="w-5 h-5 fill-current" />
           </Button>

@@ -24,9 +24,9 @@ export default function Home() {
   return (
     <div className="space-y-8 pb-32 animate-slide-up">
       {/* AI Greeting */}
-      <div className="bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-2xl p-6 border border-primary/30 backdrop-blur-sm">
+      <div className="bg-primary/5 dark:bg-primary/10 rounded-2xl p-6 border border-primary/20 dark:border-primary/30">
         <div className="flex items-start gap-4">
-          <div className="p-3 bg-primary/20 rounded-full">
+          <div className="p-3 bg-primary/10 dark:bg-primary/20 rounded-full">
             <Sparkles className="w-6 h-6 text-primary" />
           </div>
           <div>
@@ -48,7 +48,7 @@ export default function Home() {
           {moods.map((mood) => (
             <button
               key={mood.name}
-              className={`px-6 py-3 rounded-full border-2 transition-all duration-300 hover:scale-105 font-poppins font-medium ${mood.color}`}
+              className={`px-6 py-3 rounded-full border transition-all duration-300 hover:scale-105 font-poppins font-medium ${mood.color} hover:bg-opacity-70`}
             >
               {mood.name}
             </button>

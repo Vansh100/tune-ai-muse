@@ -1,9 +1,12 @@
-import { Play, SkipBack, SkipForward, Shuffle, Repeat, Volume2, Heart } from "lucide-react";
+import { Play, SkipBack, SkipForward, Shuffle, Repeat, Volume2, Heart, Maximize2 } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import album1 from "@/assets/album-1.jpg";
 
 export const MusicPlayer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="fixed bottom-0 left-0 right-0 h-24 bg-card/95 backdrop-blur-xl border-t border-border px-6 flex items-center justify-between z-50">
       {/* Song Info */}
@@ -11,7 +14,8 @@ export const MusicPlayer = () => {
         <img
           src={album1}
           alt="Album cover"
-          className="w-14 h-14 rounded-lg shadow-lg"
+          className="w-14 h-14 rounded-lg shadow-lg cursor-pointer hover:opacity-80 transition-opacity"
+          onClick={() => navigate("/player")}
         />
         <div className="overflow-hidden">
           <h4 className="font-poppins font-semibold text-foreground truncate">
@@ -61,6 +65,14 @@ export const MusicPlayer = () => {
 
       {/* Volume Control */}
       <div className="flex items-center gap-2 w-1/4 justify-end">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => navigate("/player")}
+          className="text-muted-foreground hover:text-foreground"
+        >
+          <Maximize2 className="w-5 h-5" />
+        </Button>
         <Volume2 className="w-5 h-5 text-muted-foreground" />
         <Slider
           defaultValue={[70]}

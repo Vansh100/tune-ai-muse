@@ -1,6 +1,7 @@
 import { Home, Search, Library, Heart, Settings, User } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navigation = [
   { name: "Home", icon: Home, href: "/" },
@@ -14,10 +15,11 @@ const navigation = [
 export const Sidebar = () => {
   return (
     <aside className="fixed left-0 top-0 h-screen w-64 bg-card border-r border-border p-6 flex flex-col">
-      <div className="mb-8">
-        <h1 className="text-2xl font-montserrat font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+      <div className="mb-8 flex items-center justify-between">
+        <h1 className="text-2xl font-montserrat font-bold text-primary">
           Tune Central
         </h1>
+        <ThemeToggle />
       </div>
 
       <nav className="flex-1 space-y-2">

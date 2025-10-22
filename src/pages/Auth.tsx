@@ -25,9 +25,9 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden dark">
       {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background dark:from-primary/20">
         <div className="absolute inset-0 opacity-30">
           {[...Array(20)].map((_, i) => (
             <div
@@ -54,9 +54,9 @@ export default function Auth() {
             <img
               src={logoSoundwave}
               alt="Tune Central"
-              className="w-20 h-20 mb-4 animate-pulse-glow"
+              className="w-20 h-20 mb-4"
             />
-            <h1 className="text-3xl font-montserrat font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-montserrat font-bold text-primary">
               Tune Central
             </h1>
             <p className="text-muted-foreground mt-2 font-inter">
@@ -110,7 +110,7 @@ export default function Auth() {
 
             <Button
               type="submit"
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-poppins font-semibold shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-300"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-poppins font-semibold shadow-lg transition-all duration-300"
             >
               {isLogin ? "Login" : "Sign Up"}
             </Button>

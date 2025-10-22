@@ -11,6 +11,7 @@ import Favorites from "./pages/Favorites";
 import Library from "./pages/Library";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
+import Player from "./pages/Player";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/settings" element={<Settings />} />
           </Route>
           <Route path="/auth" element={<Auth />} />
+          <Route path="/player" element={<Player />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
