@@ -6,10 +6,10 @@ import { useNavigate } from "react-router-dom";
 import album1 from "@/assets/album-1.jpg";
 
 const queue = [
-  { title: "Lose Yourself", artist: "Eminem", duration: "5:26" },
-  { title: "Godzilla", artist: "Eminem ft. Juice WRLD", duration: "3:31" },
-  { title: "Without Me", artist: "Eminem", duration: "4:50" },
-  { title: "Rap God", artist: "Eminem", duration: "6:04" },
+  { title: "Neon Dreams", artist: "Electric Vibes", duration: "5:26" },
+  { title: "Cosmic Journey", artist: "Space Odyssey", duration: "3:31" },
+  { title: "Speed of Light", artist: "Pulse Nation", duration: "4:50" },
+  { title: "Golden Hour", artist: "Sunset Collective", duration: "3:45" },
 ];
 
 export default function Player() {
@@ -43,7 +43,7 @@ export default function Player() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center px-8 py-12 max-w-2xl mx-auto w-full">
         {/* Album Art */}
-        <div className="relative w-full max-w-md aspect-square mb-8 rounded-2xl overflow-hidden shadow-2xl">
+        <div className="relative w-full max-w-md aspect-square mb-8 rounded-2xl overflow-hidden shadow-2xl animate-scale-in">
           <img
             src={album1}
             alt="Album cover"
@@ -52,9 +52,9 @@ export default function Player() {
         </div>
 
         {/* Song Info */}
-        <div className="w-full mb-8 text-center">
-          <h1 className="text-4xl font-montserrat font-bold mb-2">Lose Yourself</h1>
-          <p className="text-xl text-muted-foreground">Eminem</p>
+        <div className="w-full mb-8 text-center animate-slide-up">
+          <h1 className="text-4xl font-montserrat font-bold mb-2">Neon Dreams</h1>
+          <p className="text-xl text-muted-foreground">Electric Vibes</p>
         </div>
 
         {/* Progress Bar */}
@@ -77,21 +77,21 @@ export default function Player() {
           <Button
             variant="ghost"
             size="icon"
-            className="hover:bg-secondary hover:text-foreground"
+            className="hover:bg-secondary hover:text-foreground transition-all hover:scale-110"
           >
             <Shuffle className="w-5 h-5" />
           </Button>
           <Button
             variant="ghost"
             size="icon"
-            className="hover:bg-secondary hover:text-foreground"
+            className="hover:bg-secondary hover:text-foreground transition-all hover:scale-110"
           >
             <SkipBack className="w-7 h-7" />
           </Button>
           <Button
             size="icon"
             onClick={() => setIsPlaying(!isPlaying)}
-            className="w-16 h-16 rounded-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="w-16 h-16 rounded-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
             {isPlaying ? (
               <Pause className="w-7 h-7 fill-current" />
@@ -102,14 +102,14 @@ export default function Player() {
           <Button
             variant="ghost"
             size="icon"
-            className="hover:bg-secondary hover:text-foreground"
+            className="hover:bg-secondary hover:text-foreground transition-all hover:scale-110"
           >
             <SkipForward className="w-7 h-7" />
           </Button>
           <Button
             variant="ghost"
             size="icon"
-            className="hover:bg-secondary hover:text-foreground"
+            className="hover:bg-secondary hover:text-foreground transition-all hover:scale-110"
           >
             <Repeat className="w-5 h-5" />
           </Button>

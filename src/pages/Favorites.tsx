@@ -4,16 +4,19 @@ import { Heart } from "lucide-react";
 import album1 from "@/assets/album-1.jpg";
 import album2 from "@/assets/album-2.jpg";
 import album3 from "@/assets/album-3.jpg";
+import album4 from "@/assets/album-4.jpg";
+import album5 from "@/assets/album-5.jpg";
+import album6 from "@/assets/album-6.jpg";
 
 const tabs = ["Songs", "Artists", "Albums", "Playlists"];
 
 const favorites = [
-  { title: "Lose Yourself", artist: "Eminem", image: album1, duration: "5:26", mood: "Energetic" },
-  { title: "Mockingbird", artist: "Eminem", image: album1, duration: "4:11", mood: "Melancholy" },
-  { title: "Chill Waves", artist: "Various Artists", image: album2, duration: "45:00", mood: "Calm" },
-  { title: "Energy Boost", artist: "EDM Hits", image: album3, duration: "3:15", mood: "Energetic" },
-  { title: "Midnight Dreams", artist: "Lo-Fi Collective", image: album2, duration: "3:42", mood: "Dark" },
-  { title: "Stan", artist: "Eminem ft. Dido", image: album1, duration: "6:44", mood: "Melancholy" },
+  { title: "Neon Dreams", artist: "Electric Vibes", image: album1, duration: "5:26", mood: "Energetic" },
+  { title: "Cosmic Journey", artist: "Space Odyssey", image: album2, duration: "4:11", mood: "Dreamy" },
+  { title: "Speed of Light", artist: "Pulse Nation", image: album3, duration: "3:45", mood: "Intense" },
+  { title: "Golden Hour", artist: "Sunset Collective", image: album4, duration: "3:15", mood: "Calm" },
+  { title: "Night City", artist: "Cyber Dreams", image: album5, duration: "3:42", mood: "Dark" },
+  { title: "Paradise Waves", artist: "Tropical Beats", image: album6, duration: "4:20", mood: "Happy" },
 ];
 
 export default function Favorites() {
@@ -22,8 +25,8 @@ export default function Favorites() {
   return (
     <div className="space-y-8 pb-32 animate-slide-up">
       {/* Header */}
-      <div className="flex items-center gap-4">
-        <div className="p-4 bg-gradient-to-br from-primary to-purple-500 rounded-2xl shadow-[0_0_40px_rgba(168,85,247,0.4)]">
+      <div className="flex items-center gap-4 animate-slide-up">
+        <div className="p-4 bg-gradient-to-br from-primary to-purple-500 rounded-2xl shadow-[0_0_40px_rgba(168,85,247,0.4)] animate-pulse-glow">
           <Heart className="w-8 h-8 fill-current" />
         </div>
         <div>
@@ -40,7 +43,7 @@ export default function Favorites() {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-6 py-3 font-poppins font-medium transition-colors relative ${
+            className={`px-6 py-3 font-poppins font-medium transition-all duration-300 relative hover:scale-105 ${
               activeTab === tab
                 ? "text-primary"
                 : "text-muted-foreground hover:text-foreground"
@@ -55,7 +58,7 @@ export default function Favorites() {
       </div>
 
       {/* AI Insight */}
-      <div className="bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-2xl p-6 border border-primary/30">
+      <div className="bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-2xl p-6 border border-primary/30 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
         <h3 className="text-lg font-poppins font-semibold mb-2">
           Liked by You, Loved by Others
         </h3>

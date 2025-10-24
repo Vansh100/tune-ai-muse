@@ -5,15 +5,16 @@ import { SongCard } from "@/components/SongCard";
 import album1 from "@/assets/album-1.jpg";
 import album2 from "@/assets/album-2.jpg";
 import album3 from "@/assets/album-3.jpg";
+import album4 from "@/assets/album-4.jpg";
 
 const genres = ["Hip-Hop", "Pop", "Rock", "Electronic", "Jazz", "Classical", "R&B", "Country"];
 const moods = ["Happy", "Sad", "Energetic", "Calm", "Romantic", "Angry", "Nostalgic", "Focused"];
 
 const searchResults = [
-  { title: "Lose Yourself", artist: "Eminem", image: album1, duration: "5:26" },
-  { title: "Mockingbird", artist: "Eminem", image: album1, duration: "4:11" },
-  { title: "Stan", artist: "Eminem ft. Dido", image: album1, duration: "6:44" },
-  { title: "Chill Vibes", artist: "Various Artists", image: album2, duration: "45:00" },
+  { title: "Neon Dreams", artist: "Electric Vibes", image: album1, duration: "5:26" },
+  { title: "Cosmic Journey", artist: "Space Odyssey", image: album2, duration: "4:11" },
+  { title: "Speed of Light", artist: "Pulse Nation", image: album3, duration: "3:45" },
+  { title: "Golden Hour", artist: "Sunset Collective", image: album4, duration: "3:15" },
 ];
 
 export default function Search() {
@@ -55,7 +56,7 @@ export default function Search() {
           {moods.map((mood) => (
             <button
               key={mood}
-              className="relative overflow-hidden rounded-xl h-32 bg-gradient-to-br from-primary/30 to-purple-500/30 hover:from-primary/40 hover:to-purple-500/40 transition-all duration-300 group border border-primary/20"
+              className="relative overflow-hidden rounded-xl h-32 bg-gradient-to-br from-primary/30 to-purple-500/30 hover:from-primary/40 hover:to-purple-500/40 hover:scale-105 transition-all duration-300 group border border-primary/20 hover:shadow-lg hover:shadow-primary/20"
             >
               <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50 group-hover:opacity-70 transition-opacity" />
               <div className="relative h-full flex items-center justify-center">
@@ -73,7 +74,7 @@ export default function Search() {
           {genres.map((genre) => (
             <button
               key={genre}
-              className="px-6 py-2 rounded-full bg-secondary hover:bg-primary/20 border border-border hover:border-primary transition-all duration-300 font-poppins font-medium"
+              className="px-6 py-2 rounded-full bg-secondary hover:bg-primary/20 border border-border hover:border-primary hover:scale-105 transition-all duration-300 font-poppins font-medium"
             >
               {genre}
             </button>

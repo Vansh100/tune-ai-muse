@@ -14,7 +14,7 @@ export const SongCard = ({ title, artist, image, duration, className }: SongCard
   return (
     <div
       className={cn(
-        "group relative bg-card rounded-xl p-4 transition-all duration-300 hover:bg-secondary cursor-pointer border border-transparent hover:border-primary/20",
+        "group relative bg-card rounded-xl p-4 transition-all duration-300 hover:bg-secondary cursor-pointer border border-transparent hover:border-primary/20 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1",
         className
       )}
     >

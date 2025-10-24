@@ -1,9 +1,11 @@
-import { User, Lock, Bell, Music, Sparkles, Shield } from "lucide-react";
+import { User, Lock, Bell, Music, Sparkles, Shield, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const settingsSections = [
   {
@@ -26,6 +28,13 @@ const settingsSections = [
 ];
 
 export default function Settings() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    toast.success("Logged out successfully!");
+    setTimeout(() => navigate("/auth"), 500);
+  };
+
   return (
     <div className="max-w-4xl mx-auto space-y-8 pb-32 animate-slide-up">
       {/* Header */}
@@ -179,6 +188,16 @@ export default function Settings() {
       {/* Save Button */}
       <Button className="w-full bg-primary hover:bg-primary/90 shadow-[0_0_30px_rgba(168,85,247,0.4)] font-poppins font-semibold text-lg py-6 animate-pulse-glow">
         Save Changes
+      </Button>
+
+      {/* Logout Button */}
+      <Button 
+        onClick={handleLogout}
+        variant="outline" 
+        className="w-full border-destructive/50 text-destructive hover:bg-destructive hover:text-white font-poppins font-semibold text-lg py-6 transition-all duration-300 group"
+      >
+        <LogOut className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+        Log Out
       </Button>
     </div>
   );
