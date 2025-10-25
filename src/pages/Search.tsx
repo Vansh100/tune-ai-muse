@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Search as SearchIcon, Mic, Sparkles } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { SongCard } from "@/components/SongCard";
@@ -19,12 +20,24 @@ const searchResults = [
 
 export default function Search() {
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search-results?q=${encodeURIComponent(searchQuery)}`);
+    }
+  };
+
+  const handleMoodClick = (mood: string) => {
+    navigate(`/search-results?mood=${encodeURIComponent(mood)}`);
+  };
 
   return (
     <div className="space-y-8 pb-32 animate-slide-up">
       {/* Search Bar */}
       <div className="sticky top-0 z-10 bg-background/95 backdrop-blur-xl py-6 -mx-6 px-6 border-b border-border">
-        <div className="relative max-w-2xl mx-auto">
+        <form onSubmit={handleSearch} className="relative max-w-2xl mx-auto">
           <SearchIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
           <Input
             type="text"
@@ -33,10 +46,10 @@ export default function Search() {
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-12 pr-12 h-14 text-lg bg-card border-border focus:border-primary rounded-full"
           />
-          <button className="absolute right-4 top-1/2 transform -translate-y-1/2 text-primary hover:text-primary/80 transition-colors">
+          <button type="button" className="absolute right-4 top-1/2 transform -translate-y-1/2 text-primary hover:text-primary/80 transition-colors">
             <Mic className="w-5 h-5" />
           </button>
-        </div>
+        </form>
       </div>
 
       {/* AI Suggestion */}
@@ -56,6 +69,7 @@ export default function Search() {
           {moods.map((mood) => (
             <button
               key={mood}
+              onClick={() => handleMoodClick(mood)}
               className="relative overflow-hidden rounded-xl h-32 bg-gradient-to-br from-primary/30 to-purple-500/30 hover:from-primary/40 hover:to-purple-500/40 hover:scale-105 transition-all duration-300 group border border-primary/20 hover:shadow-lg hover:shadow-primary/20"
             >
               <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50 group-hover:opacity-70 transition-opacity" />
