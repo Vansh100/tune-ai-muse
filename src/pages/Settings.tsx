@@ -6,6 +6,7 @@ import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useAuth } from "@/hooks/useAuth";
 
 const settingsSections = [
   {
@@ -29,10 +30,16 @@ const settingsSections = [
 
 export default function Settings() {
   const navigate = useNavigate();
+  const { signOut } = useAuth();
 
-  const handleLogout = () => {
-    toast.success("Logged out successfully!");
-    setTimeout(() => navigate("/auth"), 500);
+  const handleLogout = async () => {
+    const { error } = await signOut();
+    if (error) {
+      toast.error("Failed to logout");
+    } else {
+      toast.success("Logged out successfully!");
+      navigate("/auth");
+    }
   };
 
   return (
