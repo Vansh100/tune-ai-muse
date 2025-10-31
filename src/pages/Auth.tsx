@@ -77,7 +77,7 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden dark">
+    <div className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background dark:from-primary/20">
         <div className="absolute inset-0 opacity-30">
@@ -122,28 +122,28 @@ export default function Auth() {
               <Label htmlFor="email" className="text-foreground font-poppins">
                 Email
               </Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-background/50 border-border focus:border-primary transition-colors"
-              />
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-background border-border focus:border-primary transition-colors text-foreground"
+                />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="password" className="text-foreground font-poppins">
                 Password
               </Label>
-              <Input
-                id="password"
-                type="password"
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="bg-background/50 border-border focus:border-primary transition-colors"
-              />
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="bg-background border-border focus:border-primary transition-colors text-foreground"
+                />
             </div>
 
             {!isLogin && (
@@ -157,7 +157,7 @@ export default function Auth() {
                   placeholder="••••••••"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="bg-background/50 border-border focus:border-primary transition-colors"
+                  className="bg-background border-border focus:border-primary transition-colors text-foreground"
                 />
               </div>
             )}
