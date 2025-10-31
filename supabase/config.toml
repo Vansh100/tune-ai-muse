@@ -1,1 +1,4 @@
 project_id = "ggfqhidcwdhnsizbrtbc"
+
+[functions.song-recommendations]
+verify_jwt = false

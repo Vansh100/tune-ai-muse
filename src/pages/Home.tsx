@@ -1,4 +1,5 @@
 import { SongCard } from "@/components/SongCard";
+import { AIRecommendations } from "@/components/AIRecommendations";
 import { Sparkles } from "lucide-react";
 import album1 from "@/assets/album-1.jpg";
 import album2 from "@/assets/album-2.jpg";
@@ -43,6 +44,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* AI Recommendations */}
+      <AIRecommendations />
 
       {/* Mood Filters */}
       <div>
